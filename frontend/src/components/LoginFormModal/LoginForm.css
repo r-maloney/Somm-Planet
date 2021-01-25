@@ -7,7 +7,7 @@ a {
 }
 
 #modal-content {
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .login__container {
@@ -32,11 +32,18 @@ a {
 }
 .login__error {
 }
-.login-signup__tab--active,
-.login-signup__tab--inactive {
+
+.login__container > button {
   display: block;
   line-height: 3rem;
   text-align: center;
+  background-color: #dddddd;
+  border-right: 0.5px #e0e0e0;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: #777777;
+  background-color: #ffffff;
+  font-size: 1.2rem;
 }
 
 .login-signup__tab--inactive {

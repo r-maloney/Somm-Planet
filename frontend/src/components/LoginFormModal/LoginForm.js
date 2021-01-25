@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -22,12 +24,9 @@ function LoginForm() {
 
   return (
     <div className='login__container'>
-      <Link to='/login' className='login-signup__tab--active'>
-        Log In
-      </Link>
-      <Link to='/signup' className='login-signup__tab--inactive'>
-        Sign Up
-      </Link>
+      <LoginFormModal />
+      <SignupFormModal />
+
       <form onSubmit={handleSubmit} className='login__form'>
         <div>
           <ul className='login__errors-list'>

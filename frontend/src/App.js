@@ -15,13 +15,14 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
+      {/* is below needed with Modals now?  */}
+      {/* {isLoaded && (
         <Switch>
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
         </Switch>
-      )}
+      )} */}
     </>
   );
 }
