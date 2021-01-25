@@ -14,21 +14,42 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to='/signup'>Sign Up</NavLink>
+        <li className='navbar__link'>
+          <LoginFormModal />
+        </li>
+        <li className='navbar__link'>
+          <NavLink to='/signup'>Sign Up</NavLink>
+        </li>
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
+    <nav className='navbar'>
+      <div className='navbar__main'></div>
+      <div className='navbar__link-home navbar__main'>
         <NavLink exact to='/'>
-          Home
+          <img
+            src='../images/somm-planet-logo-blue.png'
+            alt='logo'
+            className='navbar__logo'
+          />
         </NavLink>
+      </div>
+      <ul className='navbar navbar__linkList navbar__main'>
+        <li className='navbar__link'>
+          <NavLink exact to='/'>
+            Countries
+          </NavLink>
+        </li>
+        <li className='navbar__link'>
+          <NavLink exact to='/'>
+            Articles
+          </NavLink>
+        </li>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </ul>
+    </nav>
   );
 }
 

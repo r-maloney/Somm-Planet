@@ -1,0 +1,46 @@
+.navbar {
+  height: 9rem;
+  background-color: #4471c3;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template: 9rem / 3fr 1fr 3fr;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar__main {
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__linkList {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  list-style-type: none;
+  justify-items: right;
+}
+
+.navbar__link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  justify-content: end;
+  align-items: center;
+}
+
+.navbar__link a {
+  text-decoration: none;
+}
+
+.navbar__link-home {
+  justify-items: center;
+}
+
+.navbar__logo {
+  /* background-color: #00b7ff; */
+  border-radius: 0.25rem;
+  /* background-image: url("../images/somm-planet-logo-blue.png"); */
+  width: 9rem;
+  height: 9rem;
+}
