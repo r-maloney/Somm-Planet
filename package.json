@@ -1,4 +1,8 @@
 {
+  "name": "Somm-Planet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm run build --prefix frontend",
     "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
@@ -7,5 +11,8 @@
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
