@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import "./SignupForm.css";
+import "../AuthFormModal/AuthForm.css";
 
-function SignupFormPage() {
+function RegistrationForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -31,51 +31,57 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='auth__form'>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <label>
-        Email
+      <div className='auth__form-group'>
+        <label className='auth__label'>Email</label>
         <input
+          className='auth__input'
           type='text'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Username
+      </div>
+      <div className='auth__form-group'>
+        <label className='auth__label'>Username</label>
         <input
+          className='auth__input'
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
+      </div>
+      <div className='auth__form-group'>
+        <label className='auth__label'>Password</label>
         <input
+          className='auth__input'
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Confirm Password
+      </div>
+      <div className='auth__form-group'>
+        <label className='auth__label'>Confirm Password</label>
         <input
+          className='auth__input'
           type='password'
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
-      <button type='submit'>Sign Up</button>
+      </div>
+      <button className='auth-form__button' type='submit'>
+        Sign Up
+      </button>
     </form>
   );
 }
 
-export default SignupFormPage;
+export default RegistrationForm;
