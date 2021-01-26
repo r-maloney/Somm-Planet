@@ -14,12 +14,7 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <li className='navbar__link'>
-          <AuthFormModal />
-        </li>
-        <li className='navbar__link'>
-          <NavLink to='/signup'>Sign Up</NavLink>
-        </li>
+        <AuthFormModal />
       </>
     );
   }

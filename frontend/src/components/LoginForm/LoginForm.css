@@ -88,3 +88,15 @@ a {
   font-size: 1.125rem;
   padding: 0.5rem 2rem;
 }
+
+#auth-form__button {
+  display: block;
+  border-radius: 5rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px white;
+  color: #ffffff;
+  font-size: 1rem;
+  width: 6rem;
+  height: 2.4rem;
+  white-space: nowrap;
+}
