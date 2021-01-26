@@ -30,7 +30,15 @@
 }
 
 .navbar__link a {
+  color: white;
   text-decoration: none;
+}
+
+.navbar__link a:visited {
+  color: white;
+}
+.navbar__link a:hover {
+  text-decoration: underline;
 }
 
 .navbar__link-home {
