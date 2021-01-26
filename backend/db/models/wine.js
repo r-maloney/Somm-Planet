@@ -3,14 +3,38 @@ module.exports = (sequelize, DataTypes) => {
   const Wine = sequelize.define(
     "Wine",
     {
-      regionId: DataTypes.INTEGER,
-      name: DataTypes.STRING,
-      winery: DataTypes.STRING,
-      type: DataTypes.STRING,
-      varietal: DataTypes.STRING,
-      vintage: DataTypes.STRING,
-      description: DataTypes.STRING,
-      imgUrl: DataTypes.STRING,
+      regionId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+      },
+      winery: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+      },
+      type: {
+        type: DataTypes.STRING(20),
+        allowNull: false,
+      },
+      varietal: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+      },
+      vintage: {
+        type: DataTypes.STRING(20),
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      imgUrl: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     },
     {}
   );

@@ -3,11 +3,29 @@ module.exports = (sequelize, DataTypes) => {
   const Article = sequelize.define(
     "Article",
     {
-      regionId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
-      description: DataTypes.STRING,
-      imgUrl: DataTypes.STRING,
-      title: DataTypes.STRING,
+      regionId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      imgUrl: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1, 100],
+        },
+      },
     },
     {}
   );

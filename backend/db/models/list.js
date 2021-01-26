@@ -3,8 +3,17 @@ module.exports = (sequelize, DataTypes) => {
   const List = sequelize.define(
     "List",
     {
-      userId: DataTypes.INTEGER,
-      name: DataTypes.STRING,
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1, 50],
+        },
+      },
     },
     {}
   );

@@ -3,8 +3,15 @@ module.exports = (sequelize, DataTypes) => {
   const Country = sequelize.define(
     "Country",
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
+      name: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+        unique: true,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     },
     {}
   );

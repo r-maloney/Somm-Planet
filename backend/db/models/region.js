@@ -3,10 +3,21 @@ module.exports = (sequelize, DataTypes) => {
   const Region = sequelize.define(
     "Region",
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      imgUrl: DataTypes.STRING,
-      countryId: DataTypes.INTEGER,
+      name: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      imgUrl: {
+        type: DataTypes.STRING,
+      },
+      countryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {}
   );
