@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { Modal } from "../../context/Modal";
-import LoginForm from "../LoginFormModal";
+import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
 
 function AuthFormModal() {
   const [showModal, setShowModal] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(true);
 
   return (
     <>
       <button onClick={() => setShowModal(true)}>Auth</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <NavLink to='/login'>Login</NavLink>
-          <NavLink to='/signup'>Sign Up</NavLink>
+          <button onClick={() => setShowLoginForm(true)}>Log In</button>
+          <button onClick={() => setShowLoginForm(false)}>Register</button>
+          {showLoginForm && <LoginForm />}
+          {!showLoginForm && <SignupForm />}
         </Modal>
       )}
     </>
