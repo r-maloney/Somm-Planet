@@ -19,6 +19,16 @@ function LoginForm() {
     );
   };
 
+  const demoLogin = () => {
+    setCredential("demo");
+    setPassword("password");
+    return dispatch(sessionActions.login({ credential, password })).catch(
+      (res) => {
+        if (res.data && res.data.errors) setErrors(res.data.errors);
+      }
+    );
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit} className='auth__form'>
@@ -58,7 +68,14 @@ function LoginForm() {
           <button className='auth-form__button' type='submit'>
             Log In
           </button>
-          {/* <a href="/demo?_csrf=csrf" id="auth-splash__form-demo">Login as demo user</a>  */}
+          <form onSubmit={demoLogin}>
+            <button
+              className='auth-form__button demo-login__button'
+              type='submit'
+            >
+              Login as demo user
+            </button>
+          </form>
         </div>
       </form>
     </>

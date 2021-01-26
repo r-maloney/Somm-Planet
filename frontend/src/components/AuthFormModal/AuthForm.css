@@ -88,7 +88,7 @@ a {
 
 .auth-form__button {
   display: block;
-  margin: 2rem auto 0;
+  margin: 1rem auto 0;
   border-radius: 0.25rem;
   background-color: #bf538d;
   border: none;
@@ -99,6 +99,20 @@ a {
 
 .auth-form__button:hover {
   background-color: #a14677;
+}
+
+.demo-login__button {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  background-color: white;
+  color: #bf538d;
+  outline-color: none;
+}
+
+.demo-login__button:hover {
+  color: #bf538d;
+  background-color: white;
+  text-decoration: underline;
 }
 
 #nav__auth-button {
