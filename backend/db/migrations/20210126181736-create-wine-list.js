@@ -12,14 +12,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: "Wine",
+          model: "Wines",
         },
       },
       listId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: "List",
+          model: "Lists",
         },
       },
       createdAt: {

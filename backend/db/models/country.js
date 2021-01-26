@@ -17,7 +17,10 @@ module.exports = (sequelize, DataTypes) => {
   );
   Country.associate = function (models) {
     // associations can be defined here
-    Country.hasMany(models.Region, { foreignKey: "countryId" });
+    Country.hasMany(models.Region, {
+      foreignKey: "countryId",
+      onDelete: "cascade",
+    });
   };
   return Country;
 };
