@@ -10,8 +10,10 @@ function LoginForm() {
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
+    console.log("HandleSubmit", e);
     e.preventDefault();
     setErrors([]);
+    console.log("handleLogin", password, credential);
     return dispatch(sessionActions.login({ credential, password })).catch(
       (res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
@@ -20,13 +22,12 @@ function LoginForm() {
   };
 
   const demoLogin = () => {
-    setCredential("demo");
-    setPassword("password");
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      (res) => {
-        if (res.data && res.data.errors) setErrors(res.data.errors);
-      }
-    );
+    setErrors([]);
+    return dispatch(
+      sessionActions.login({ credential: "Demo-lition", password: "password" })
+    ).catch((res) => {
+      if (res.data && res.data.errors) setErrors(res.data.errors);
+    });
   };
 
   return (
@@ -68,14 +69,13 @@ function LoginForm() {
           <button className='auth-form__button' type='submit'>
             Log In
           </button>
-          <form onSubmit={demoLogin}>
-            <button
-              className='auth-form__button demo-login__button'
-              type='submit'
-            >
-              Login as demo user
-            </button>
-          </form>
+          <button
+            className='auth-form__button demo-login__button'
+            onClick={demoLogin}
+            type='button'
+          >
+            Login as demo user
+          </button>
         </div>
       </form>
     </>
