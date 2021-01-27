@@ -6,6 +6,8 @@
   display: grid;
   grid-template: 9rem / 3fr 1fr 3fr;
   font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 .navbar__main {

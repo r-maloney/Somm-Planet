@@ -95,6 +95,7 @@ a {
   color: #ffffff;
   font-size: 1.125rem;
   padding: 0.5rem 2rem;
+  outline: none;
 }
 
 .auth-form__button:hover {
@@ -106,7 +107,6 @@ a {
   margin-top: 0.5rem;
   background-color: white;
   color: #bf538d;
-  outline-color: none;
 }
 
 .demo-login__button:hover {

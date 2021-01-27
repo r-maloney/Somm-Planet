@@ -33,8 +33,8 @@ function Navigation({ isLoaded }) {
       </div>
       <ul className='navbar navbar__linkList navbar__main'>
         <li className='navbar__link'>
-          <NavLink exact to='/'>
-            Countries
+          <NavLink exact to='/france'>
+            Regions
           </NavLink>
         </li>
         <li className='navbar__link'>
