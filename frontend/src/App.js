@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import Country from "./components/Country";
+import Region from "./components/Region";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       <HomePage />
       <Country />
+      <Region />
       <Switch>
         <Route path='/api/france'></Route>
       </Switch>
