@@ -22,7 +22,6 @@ function LoginForm() {
   };
 
   const demoLogin = () => {
-    setErrors([]);
     return dispatch(
       sessionActions.login({ credential: "Demo-lition", password: "password" })
     ).catch((res) => {

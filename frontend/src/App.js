@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
+import Country from "./components/Country";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       <HomePage />
+      <Country />
       <Switch>
         <Route path='/api/france'></Route>
       </Switch>
