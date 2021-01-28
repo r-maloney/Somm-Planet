@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Select from "react-select";
 import ProfileButton from "./ProfileButton";
 import AuthFormModal from "../AuthFormModal";
 import MenuButton from "./MenuButton";
+
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -19,6 +21,14 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
+
+  const countries = useSelector((state) => Object.values(state.country));
+  const options = [];
+
+  countries.forEach((country) => {
+    options.push({ value: country.name, label: country.name });
+  });
+
   const randomImg = () => {
     const randNum = Math.floor(Math.random() * 4);
     return `url(${process.env.PUBLIC_URL}/images/background-image-${randNum}.jpg)`;
@@ -51,6 +61,8 @@ function Navigation({ isLoaded }) {
           </li>
           {isLoaded && sessionLinks}
         </ul>
+        <h2 className='search__header'>Explore Wine</h2>
+        <Select id='search__container' options={options} />
       </div>
     </nav>
   );

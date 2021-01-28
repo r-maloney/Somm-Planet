@@ -6,14 +6,15 @@ import "./Navigation.css";
 const MenuButton = () => {
   let history = useHistory();
   const countries = useSelector((state) => Object.values(state.country));
+
   const menuItems = countries.map((country) => (
     <li key={country.id} className='country__menu-menuItem'>
-      <MenuItem>{country.name}</MenuItem>
+      <MenuItem value={country.id}>{country.name}</MenuItem>
     </li>
   ));
 
   const handleSelection = (value, event) => {
-    history.push(`/country/${value}`);
+    history.push(`/countries/${value}}`);
   };
 
   return (
