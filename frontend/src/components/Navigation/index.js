@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Select from "react-select";
 import ProfileButton from "./ProfileButton";
 import AuthFormModal from "../AuthFormModal";
 import MenuButton from "./MenuButton";
+import { getCountries } from "../../store/country";
 
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
 
   let sessionLinks;
   if (sessionUser) {

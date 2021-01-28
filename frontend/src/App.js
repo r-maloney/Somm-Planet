@@ -5,7 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import Country from "./components/Country";
-import Region from "./components/Region";
+import CountryDetails from "./components/CountryDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,11 +17,19 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      <HomePage />
-      <Country />
+
       <Switch>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+        <Route exact path='/countries/'>
+          <Country />
+        </Route>
         <Route path='/countries/:countryId'>
-          <Region />
+          <CountryDetails />
+        </Route>
+        <Route>
+          <h2>Page Not Found</h2>
         </Route>
       </Switch>
     </>
