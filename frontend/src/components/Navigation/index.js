@@ -61,7 +61,7 @@ function Navigation({ isLoaded }) {
             <MenuButton />
           </li>
           <li className='navbar__link'>
-            <NavLink exact to='/'>
+            <NavLink exact to='/articles'>
               Articles
             </NavLink>
           </li>

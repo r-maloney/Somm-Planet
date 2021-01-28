@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import countryReducer from "./country";
 import regionReducer from "./region";
+import articleReducer from "./article";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   country: countryReducer,
   region: regionReducer,
+  article: articleReducer,
 });
 
 let enhancer;

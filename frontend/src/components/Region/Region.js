@@ -2,6 +2,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getRegions } from "../../store/region";
+import RegionDetails from "../RegionDetails/RegionDetails";
 
 const Region = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,10 @@ const Region = () => {
     <div>
       <p>regions</p>
       {regions.map((region) => (
-        <NavLink key={region.id} id={region.id} to={`/country/${region.id}`}>
-          {region.name}
-        </NavLink>
+        <>
+          <button>{region.name}</button>
+          <RegionDetails />
+        </>
       ))}
     </div>
   );

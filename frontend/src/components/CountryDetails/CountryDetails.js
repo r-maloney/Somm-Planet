@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCountries } from "../../store/country";
+import "./CountryDetails.css";
 
 const CountryDetails = () => {
   const { countryId } = useParams();
@@ -18,7 +19,10 @@ const CountryDetails = () => {
   return (
     <>
       <h2>Welcome to {country.name}!</h2>
-
+      <img
+        src='https://media.winefolly.com/France-Wine-Map-by-WineFolly.jpg'
+        alt='Map of wine regions in France.'
+      />
       <Region />
     </>
   );
