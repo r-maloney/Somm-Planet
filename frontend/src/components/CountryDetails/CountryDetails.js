@@ -23,7 +23,13 @@ const CountryDetails = () => {
         src='https://media.winefolly.com/France-Wine-Map-by-WineFolly.jpg'
         alt='Map of wine regions in France.'
       />
-      <Region />
+      <div>
+        <ul>
+          <li>
+            <Region />
+          </li>
+        </ul>
+      </div>
     </>
   );
 };

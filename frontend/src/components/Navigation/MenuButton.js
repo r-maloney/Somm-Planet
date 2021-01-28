@@ -14,7 +14,8 @@ const MenuButton = () => {
   ));
 
   const handleSelection = (value, event) => {
-    history.push(`/countries/${value}}`);
+    let val = Number(value);
+    history.push(`/countries/${val}`);
   };
 
   return (
