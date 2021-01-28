@@ -5,18 +5,16 @@ const setRegions = (payload) => ({
   payload,
 });
 
-export const getRegions = () => async (dispatch) => {
-  const res = await fetch("/api/regions");
+export const getRegions = (id) => async (dispatch) => {
+  const res = await fetch(`/api/countries/${id}`);
   if (res.ok) {
     const regions = await res.json();
+    console.log(regions);
     dispatch(setRegions(regions));
   }
 };
 
-const initState = {
-  1: { id: 1, name: "Loire" },
-  2: { id: 2, name: "Champagne" },
-};
+const initState = {};
 
 const regionReducer = (state = initState, action) => {
   const newState = Object.assign({}, state);

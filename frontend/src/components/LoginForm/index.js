@@ -10,10 +10,8 @@ function LoginForm() {
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
-    console.log("HandleSubmit", e);
     e.preventDefault();
     setErrors([]);
-    console.log("handleLogin", password, credential);
     return dispatch(sessionActions.login({ credential, password })).catch(
       (res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);

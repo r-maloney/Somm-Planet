@@ -25,7 +25,7 @@ function Navigation({ isLoaded }) {
       <div className='navbar__link-home navbar__main'>
         <NavLink exact to='/'>
           <img
-            src='../images/somm-planet-logo-blue.png'
+            src='/images/somm-planet-logo-blue.png'
             alt='logo'
             className='navbar__logo'
           />

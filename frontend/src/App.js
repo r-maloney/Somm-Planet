@@ -19,9 +19,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       <HomePage />
       <Country />
-      <Region />
       <Switch>
-        <Route path='/api/france'></Route>
+        <Route path='/countries/:countryId'>
+          <Region />
+        </Route>
       </Switch>
     </>
   );
