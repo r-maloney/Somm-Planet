@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import AuthFormModal from "../AuthFormModal";
+import MenuButton from "./MenuButton";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -18,32 +19,39 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
+  const randomImg = () => {
+    const randNum = Math.floor(Math.random() * 4);
+    return `url(${process.env.PUBLIC_URL}/images/background-image-${randNum}.jpg)`;
+  };
+  const style = {
+    backgroundImage: `${randomImg()}`,
+  };
 
   return (
-    <nav className='navbar'>
-      <div className='navbar__main'></div>
-      <div className='navbar__link-home navbar__main'>
-        <NavLink exact to='/'>
-          <img
-            src='/images/somm-planet-logo-blue.png'
-            alt='logo'
-            className='navbar__logo'
-          />
-        </NavLink>
-      </div>
-      <ul className='navbar navbar__linkList navbar__main'>
-        <li className='navbar__link'>
-          <NavLink exact to='/france'>
-            Regions
-          </NavLink>
-        </li>
-        <li className='navbar__link'>
+    <nav>
+      <div className='navbar' style={style}>
+        <div className='navbar__main'></div>
+        <div className='navbar__link-home navbar__main'>
           <NavLink exact to='/'>
-            Articles
+            <img
+              src='/images/somm-planet-logo-white-removebg.png'
+              alt='logo'
+              className='navbar__logo'
+            />
           </NavLink>
-        </li>
-        {isLoaded && sessionLinks}
-      </ul>
+        </div>
+        <ul className='navbar navbar__linkList navbar__main'>
+          <li className='navbar__link'>
+            <MenuButton />
+          </li>
+          <li className='navbar__link'>
+            <NavLink exact to='/'>
+              Articles
+            </NavLink>
+          </li>
+          {isLoaded && sessionLinks}
+        </ul>
+      </div>
     </nav>
   );
 }

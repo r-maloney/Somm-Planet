@@ -1,13 +1,12 @@
 .navbar {
-  height: 9rem;
-  background-color: #4471c3;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template: 9rem / 3fr 1fr 3fr;
+  grid-template: 11rem / 3fr 1fr 3fr;
   font-family: "Open Sans", sans-serif;
   width: 100%;
-  height: 100%;
+  height: 500px;
+  background-size: cover;
 }
 
 .navbar__main {
@@ -32,12 +31,14 @@
 }
 
 .navbar__link a {
-  color: white;
+  color: #582c2b;
+  font-weight: bold;
   text-decoration: none;
+  font-size: 1.3rem;
 }
 
 .navbar__link a:visited {
-  color: white;
+  color: #582c2b;
 }
 .navbar__link a:hover {
   text-decoration: underline;
@@ -48,9 +49,53 @@
 }
 
 .navbar__logo {
-  /* background-color: #00b7ff; */
   border-radius: 0.25rem;
-  /* background-image: url("../images/somm-planet-logo-blue.png"); */
-  width: 9rem;
-  height: 9rem;
+  width: 13rem;
+  height: 13rem;
+  position: relative;
+  top: -1rem;
+}
+
+.country__menu {
+  position: relative;
+}
+
+.country__menu-button {
+  color: #582c2b;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.country__menu-button:hover {
+  text-decoration: underline;
+}
+
+.country__menu-menu {
+  position: absolute;
+  top: 1.5rem;
+  z-index: 1;
+  border: 1px solid;
+  width: 12rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.country__menu-menuItem {
+  display: grid;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #d3d3d3;
+  justify-items: center;
+  color: #142b44;
+}
+
+.country__menu-menuItem:hover {
+  color: #67747c;
+}
+.country__menu-header {
+  text-align: center;
+  width: 100%;
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  color: #142b44;
 }

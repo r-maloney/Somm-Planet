@@ -14,5 +14,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-aria-menubutton": "^7.0.1",
+    "react-select": "^4.0.2"
+  }
 }

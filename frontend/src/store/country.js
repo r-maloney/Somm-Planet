@@ -20,7 +20,6 @@ const initState = {
 
 const countryReducer = (state = initState, action) => {
   const newState = Object.assign({}, state);
-  console.log(newState);
   switch (action.type) {
     case SET_COUNTRIES:
       for (let country of action.payload) {
