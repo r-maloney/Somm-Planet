@@ -4,7 +4,7 @@ import { getArticles } from "../../store/article";
 import "./Article.css";
 import ArticleFormModal from "../ArticleFormModal";
 
-const Article = (country) => {
+const Article = ({ country }) => {
   const dispatch = useDispatch();
 
   const articles = useSelector((state) => Object.values(state.article));
@@ -19,13 +19,16 @@ const Article = (country) => {
       {
         //INCLUDE USER AS PROPS}
       }
-      <h2>What people are saying about COUNTRY.NAME</h2>
+      <h2>What people are saying about {country.name}</h2>
       {articles &&
         articles.map((article) => (
           <div key={article.id} className='country-article'>
+            {console.log(article)}
             <div className='country-article__user'>
-              <div className='country-article__user-avatar'>USER AVATAR</div>
-              <p>USER NAME</p>
+              <div className='country-article__avatar'>
+                {article.User.username.slice(0, 1).toUpperCase()}
+              </div>
+              <p>{article.User.username}</p>
             </div>
             <div className='country-article__article'>
               <p className='country-article__date'>
