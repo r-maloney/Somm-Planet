@@ -15,9 +15,14 @@ router.post(
   "/",
   requireAuth,
   asyncHandler(async (req, res) => {
-    const { message } = req.body;
-    console.log(message);
-    const article = await Article.create({ message });
+    const { userId, regionId, title, body, imgUrl } = req.body;
+    const article = await Article.create({
+      userId,
+      regionId,
+      title,
+      body,
+      imgUrl,
+    });
     res.json({ article });
   })
 );

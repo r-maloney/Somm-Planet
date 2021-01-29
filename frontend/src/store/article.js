@@ -18,7 +18,7 @@ export const getArticles = () => async (dispatch) => {
 export const postArticle = (article) => async (dispatch) => {
   const res = await fetch("/api/articles", {
     method: "POST",
-    body: JSON.stringify({ message: article }),
+    body: JSON.stringify(article),
   });
   console.log(res);
 };
