@@ -1,3 +1,5 @@
+import { fetch } from "./csrf";
+
 const SET_ARTICLES = "articles/SET_ARTICLES";
 
 const setArticles = (payload) => ({
@@ -8,9 +10,17 @@ const setArticles = (payload) => ({
 export const getArticles = () => async (dispatch) => {
   const res = await fetch("/api/articles");
   if (res.ok) {
-    const articles = await res.json();
+    const articles = res.data;
     dispatch(setArticles(articles));
   }
+};
+
+export const postArticle = (article) => async (dispatch) => {
+  const res = await fetch("/api/articles", {
+    method: "POST",
+    body: JSON.stringify({ message: article }),
+  });
+  console.log(res);
 };
 
 const initState = {};

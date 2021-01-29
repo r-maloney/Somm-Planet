@@ -28,7 +28,7 @@ const CountryDetails = () => {
         <Region />
       </div>
       <div>
-        <Article />
+        <Article country={country} />
       </div>
     </>
   );

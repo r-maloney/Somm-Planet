@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getArticles } from "../../store/article";
 import "./Article.css";
-// import ArticleForm from "../ArticleForm";
+import ArticleForm from "../ArticleForm";
 
 const Article = (country) => {
   const dispatch = useDispatch();
@@ -10,12 +10,15 @@ const Article = (country) => {
   const articles = useSelector((state) => Object.values(state.article));
 
   useEffect(() => {
-    dispatch(getArticles());
+    dispatch(getArticles()); //NEED TO INCLUDE USER IN FETCH
   }, [dispatch]);
 
   return (
     <div className='country-articles'>
-      {/* <ArticleForm /> */}
+      <ArticleForm />{" "}
+      {
+        //INCLUDE USER AS PROPS}
+      }
       <h2>What people are saying about COUNTRY.NAME</h2>
       {articles &&
         articles.map((article) => (
