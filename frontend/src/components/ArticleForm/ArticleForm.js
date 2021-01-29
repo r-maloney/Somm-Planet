@@ -11,6 +11,7 @@ const ArticleForm = () => {
 
   return (
     <>
+      <h2>Have something to share? Post an article here!</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title</label>

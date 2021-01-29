@@ -14,9 +14,9 @@ const Article = (country) => {
   }, [dispatch]);
 
   return (
-    <div className='country-reviews'>
+    <div className='country-articles'>
       {/* <ArticleForm /> */}
-      <h2>What people are saying about {country.name}</h2>
+      <h2>What people are saying about COUNTRY.NAME</h2>
       {articles &&
         articles.map((article) => (
           <div key={article.id} className='country-article'>
