@@ -1,11 +1,12 @@
 const asyncHandler = require("express-async-handler");
 const router = require("express").Router();
-const { Region } = require("../../db/models");
+const { Region, Wine } = require("../../db/models");
 
 router.get(
   "/",
   asyncHandler(async (_req, res) => {
-    const regions = await Region.findAll();
+    const regions = await Region.findAll({ include: [{ model: Wine }] });
+    console.log(regions);
     res.json(regions);
   })
 );

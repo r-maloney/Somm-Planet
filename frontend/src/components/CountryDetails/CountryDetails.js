@@ -13,7 +13,6 @@ const CountryDetails = () => {
 
   const countries = useSelector((state) => state.country);
   const country = countries[countryId];
-  console.log(country);
 
   useEffect(() => {
     dispatch(getCountries());

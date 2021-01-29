@@ -31,6 +31,30 @@
 .region__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 2rem;
-  padding-top: 0rem;
+  margin: 2rem;
+  margin-top: 0rem;
+  box-shadow: 0 0 10px #888888;
+}
+
+.region__details {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #23394b;
+}
+
+.region__details h3 {
+  font-size: 1.3rem;
+}
+
+.region__details p {
+  padding-top: 1rem;
+}
+
+.region__img {
+  padding: 1rem;
+}
+.region__img img {
+  border: 1px solid;
+  border-radius: 0.2rem;
 }

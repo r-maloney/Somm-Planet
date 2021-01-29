@@ -10,20 +10,15 @@ const Article = ({ country }) => {
   const articles = useSelector((state) => Object.values(state.article));
 
   useEffect(() => {
-    dispatch(getArticles()); //NEED TO INCLUDE USER IN FETCH
+    dispatch(getArticles());
   }, [dispatch]);
 
   return (
     <div className='country-articles'>
-      <ArticleFormModal />{" "}
-      {
-        //INCLUDE USER AS PROPS}
-      }
-      <h2>What people are saying about {country.name}</h2>
+      <ArticleFormModal /> <h2>What people are saying about {country.name}</h2>
       {articles &&
         articles.map((article) => (
           <div key={article.id} className='country-article'>
-            {console.log(article)}
             <div className='country-article__user'>
               <div className='country-article__avatar'>
                 {article.User.username.slice(0, 1).toUpperCase()}
