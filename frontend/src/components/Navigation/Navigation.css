@@ -31,14 +31,14 @@
 }
 
 .navbar__link a {
-  color: #582c2b;
+  color: white;
   font-weight: bold;
   text-decoration: none;
   font-size: 1.3rem;
 }
 
 .navbar__link a:visited {
-  color: #582c2b;
+  color: white;
 }
 .navbar__link a:hover {
   text-decoration: underline;
@@ -61,7 +61,7 @@
 }
 
 .country__menu-button {
-  color: #582c2b;
+  color: white;
   font-weight: bold;
   font-size: 1.3rem;
 }
@@ -107,7 +107,7 @@
   margin-right: auto;
   margin-top: auto;
   grid-column: 1/4;
-  color: #582c2b;
+  color: white;
   font-size: 2rem;
   font-weight: bold;
 }

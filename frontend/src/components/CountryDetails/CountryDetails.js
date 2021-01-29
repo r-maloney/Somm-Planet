@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCountries } from "../../store/country";
+import Article from "../Article";
 import "./CountryDetails.css";
 
 const CountryDetails = () => {
@@ -24,11 +25,10 @@ const CountryDetails = () => {
         alt='Map of wine regions in France.'
       />
       <div>
-        <ul>
-          <li>
-            <Region />
-          </li>
-        </ul>
+        <Region />
+      </div>
+      <div>
+        <Article />
       </div>
     </>
   );

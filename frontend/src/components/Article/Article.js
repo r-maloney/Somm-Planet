@@ -6,7 +6,6 @@ const Article = () => {
   const dispatch = useDispatch();
 
   const articles = useSelector((state) => Object.values(state.article));
-  console.log(articles);
 
   useEffect(() => {
     dispatch(getArticles());
@@ -17,10 +16,10 @@ const Article = () => {
       <p>article</p>
       {articles &&
         articles.map((article) => (
-          <>
+          <div key={article.id}>
             <p>{article.title}</p>
             <p>{article.body}</p>
-          </>
+          </div>
         ))}
     </>
   );

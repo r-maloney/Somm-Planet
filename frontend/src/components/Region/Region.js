@@ -1,4 +1,4 @@
-import { Route, useParams } from "react-router-dom";
+import { Route, useParams, NavLink, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getRegions } from "../../store/region";
@@ -20,13 +20,15 @@ const Region = () => {
     <div>
       <p>regions</p>
       {regions.map((region) => (
-        <>
-          <button>{region.name}</button>
-          <Route path='/countries/:countryId/:regionId'>
-            <RegionDetails />
-          </Route>
-        </>
+        <NavLink key={region.id} to={`/countries/${countryId}/${region.id}`}>
+          {region.name}
+        </NavLink>
       ))}
+      <Switch>
+        <Route path={`/countries/${countryId}/:regionId`}>
+          <RegionDetails />
+        </Route>
+      </Switch>
     </div>
   );
 };
