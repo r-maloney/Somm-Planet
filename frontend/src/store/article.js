@@ -1,9 +1,15 @@
 import { fetch } from "./csrf";
 
 const SET_ARTICLES = "articles/SET_ARTICLES";
+const ADD_ARTICLE = "articles/ADD_ARTICLE";
 
 const setArticles = (payload) => ({
   type: SET_ARTICLES,
+  payload,
+});
+
+const addArticle = (payload) => ({
+  type: ADD_ARTICLE,
   payload,
 });
 
@@ -20,7 +26,10 @@ export const postArticle = (article) => async (dispatch) => {
     method: "POST",
     body: JSON.stringify(article),
   });
-  console.log(res);
+  if (res.ok) {
+    const article = res.data;
+    dispatch(addArticle(article));
+  }
 };
 
 const initState = {};
@@ -32,6 +41,11 @@ const articleReducer = (state = initState, action) => {
       for (let article of action.payload) {
         newState[article.id] = article;
       }
+      return newState;
+    case ADD_ARTICLE:
+      const { article } = action.payload;
+      newState[article.id] = article;
+      console.log(article);
       return newState;
     default:
       return state;
