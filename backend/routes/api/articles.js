@@ -1,12 +1,29 @@
 const asyncHandler = require("express-async-handler");
 const router = require("express").Router();
 const { Article } = require("../../db/models");
+const { requireAuth } = require("../../utils/auth");
 
 router.get(
   "/",
   asyncHandler(async (_req, res) => {
     const articles = await Article.findAll();
     res.json(articles);
+  })
+);
+
+router.post(
+  "/",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { userId, regionId, title, body, imgUrl } = req.body;
+    const article = await Article.create({
+      userId,
+      regionId,
+      title,
+      body,
+      imgUrl,
+    });
+    res.json({ article });
   })
 );
 
