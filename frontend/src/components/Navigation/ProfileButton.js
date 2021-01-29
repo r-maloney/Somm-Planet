@@ -29,9 +29,9 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <div>
+    <div className='navbar__user'>
       <button className='profile__button' onClick={openMenu}>
-        <i className='fas fa-user-circle' />
+        <p>{user.username.slice(0, 1).toUpperCase()}</p>
       </button>
       {showMenu && (
         <ul className='profile__dropdown'>

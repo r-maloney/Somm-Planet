@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { postArticle } from "../../store/article";
 import { Modal } from "../../context/Modal";
 import { useState } from "react";
+import "./ArticleFormModal.css";
 
 const ArticleFormModal = (country) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const user = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(false);
@@ -28,32 +30,51 @@ const ArticleFormModal = (country) => {
   return (
     <>
       <h2>Have something to share?</h2>
-      <button onClick={() => setShowModal(true)}>Post an article here!</button>
+      <button
+        className='article-form__button article__model-button'
+        onClick={() => setShowModal(true)}
+      >
+        Post an article here!
+      </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Title</label>
+          <form onSubmit={handleSubmit} className='article__form'>
+            <h2 className='article__header'>Share your thoughts</h2>
+            <ul className='article__errors-list'>
+              {errors.map((error, idx) => (
+                <li className='article__error' key={idx}>
+                  {error}
+                </li>
+              ))}
+            </ul>
+            <div className='article__form-group'>
+              <label className='article__label'>Title</label>
               <input
+                className='article__input'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               ></input>
             </div>
-            <div>
-              <label>Body</label>
-              <input
+            <div className='article__form-group'>
+              <label className='article__label'>Body</label>
+              <textarea
+                type='text'
+                className='article__textarea'
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
-              ></input>
+              ></textarea>
             </div>
-            <div>
-              <label>Link Image *Optional*</label>
+            <div className='article__form-group'>
+              <label className='article__label'>Link Image *Optional*</label>
               <input
+                className='article__input'
                 value={imgUrl}
                 onChange={(e) => setImgUrl(e.target.value)}
               ></input>
             </div>
-            <button type='submit'>Create Article</button>
+            <button className='article-form__button' type='submit'>
+              Create Article
+            </button>
           </form>
         </Modal>
       )}
