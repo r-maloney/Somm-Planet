@@ -1,12 +1,15 @@
 const asyncHandler = require("express-async-handler");
 const router = require("express").Router();
-const { Article } = require("../../db/models");
+const { Article, User, Region } = require("../../db/models");
 const { requireAuth } = require("../../utils/auth");
 
 router.get(
   "/",
   asyncHandler(async (_req, res) => {
-    const articles = await Article.findAll();
+    const articles = await Article.findAll({
+      include: [{ model: User }, { model: Region }],
+      order: [["createdAt", "DESC"]],
+    });
     res.json(articles);
   })
 );

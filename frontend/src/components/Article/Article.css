@@ -47,16 +47,22 @@
   text-align: center;
 }
 .country-article__avatar {
-  background: #f64c72;
-  height: 4rem;
-  width: 4rem;
+  background: #bf538d;
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
   border-radius: 50%;
   text-align: center;
-  line-height: 4rem;
   color: white;
   font-size: 1.5rem;
   margin: auto auto;
+  margin-bottom: 0.5rem;
 }
+
+.country-article__user p {
+  text-align: center;
+}
+
 .country-article__article {
   display: grid;
   padding-left: 1rem;
