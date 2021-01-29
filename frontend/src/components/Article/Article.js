@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getArticles } from "../../store/article";
 import "./Article.css";
-import ArticleForm from "../ArticleForm";
+import ArticleFormModal from "../ArticleFormModal";
 
 const Article = (country) => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const Article = (country) => {
 
   return (
     <div className='country-articles'>
-      <ArticleForm />{" "}
+      <ArticleFormModal />{" "}
       {
         //INCLUDE USER AS PROPS}
       }
