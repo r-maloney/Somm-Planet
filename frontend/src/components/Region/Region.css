@@ -1,0 +1,36 @@
+.regions__list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+.regions__list a {
+  padding: 0.6rem;
+  border: 2.5px solid #bf538d;
+  border-radius: 1rem;
+}
+
+.regions__list a:visited {
+  color: #23394b;
+}
+
+.regions__header {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #23394b;
+}
+.region__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  padding-top: 0rem;
+}
