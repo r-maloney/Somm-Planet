@@ -1,0 +1,60 @@
+.regions__list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+.regions__list a {
+  padding: 0.6rem;
+  border: 2.5px solid #bf538d;
+  border-radius: 1rem;
+}
+
+.regions__list a:visited {
+  color: #23394b;
+}
+
+.regions__header {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #23394b;
+}
+.region__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem;
+  margin-top: 0rem;
+  box-shadow: 0 0 10px #888888;
+}
+
+.region__details {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #23394b;
+}
+
+.region__details h3 {
+  font-size: 1.3rem;
+}
+
+.region__details p {
+  padding-top: 1rem;
+}
+
+.region__img {
+  padding: 1rem;
+}
+.region__img img {
+  border: 1px solid;
+  border-radius: 0.2rem;
+}

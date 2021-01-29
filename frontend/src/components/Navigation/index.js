@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Select from "react-select";
 import ProfileButton from "./ProfileButton";
 import AuthFormModal from "../AuthFormModal";
 import MenuButton from "./MenuButton";
 import { getCountries } from "../../store/country";
-
+import Select from "react-select";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getCountries());
@@ -29,11 +29,27 @@ function Navigation({ isLoaded }) {
   }
 
   const countries = useSelector((state) => Object.values(state.country));
+  const regions = useSelector((state) => Object.values(state.region));
   const options = [];
 
   countries.forEach((country) => {
-    options.push({ value: country.name, label: country.name });
+    options.push({
+      value: { id: country.id, state: "country" },
+      label: country.name,
+    });
   });
+  regions.forEach((region) => {
+    options.push({
+      value: { id: region.id, state: "region", countryId: region.countryId },
+      label: region.name,
+    });
+  });
+
+  const onChange = ({ value }) => {
+    const { id, state, countryId } = value;
+    if (state === "country") history.push(`/countries/${id}`);
+    if (state === "region") history.push(`/countries/${countryId}/${id}`);
+  };
 
   const randomImg = () => {
     const randNum = Math.floor(Math.random() * 4);
@@ -67,8 +83,8 @@ function Navigation({ isLoaded }) {
           </li>
           {isLoaded && sessionLinks}
         </ul>
-        <h2 className='search__header'>Explore Wine</h2>
-        <Select id='search__container' options={options} />
+        <h2 className='search__header'>Explore Wine Regions</h2>
+        <Select onChange={onChange} id='search__container' options={options} />
       </div>
     </nav>
   );
