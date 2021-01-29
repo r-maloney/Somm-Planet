@@ -56,7 +56,7 @@ function Navigation({ isLoaded }) {
             />
           </NavLink>
         </div>
-        <ul className='navbar navbar__linkList navbar__main'>
+        <ul className='navbar navbar__linkList navbar__main' id='navbar__list'>
           <li className='navbar__link'>
             <MenuButton />
           </li>

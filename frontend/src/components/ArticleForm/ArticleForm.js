@@ -6,7 +6,7 @@ const ArticleForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postArticle(article));
+    dispatch(postArticle());
   };
 
   return (
@@ -29,3 +29,5 @@ const ArticleForm = () => {
     </>
   );
 };
+
+export default ArticleForm;
