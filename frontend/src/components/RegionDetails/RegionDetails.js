@@ -6,7 +6,7 @@ const RegionDetails = () => {
   const { regionId } = useParams();
 
   const regions = useSelector((state) => Object.values(state.region));
-  console.log(regions);
+
   const region = regions.find((r) => Number(r.id) === Number(regionId));
 
   return (

@@ -72,12 +72,19 @@
   border-radius: 0.2rem;
   border-radius: 50%;
   border: 1px solid #bf538d;
-  height: 2rem;
-  width: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
   color: #fff;
+  font-size: 1.4rem;
   font-weight: bold;
   outline: none;
 }
+
+.profile__button:hover {
+  background-color: #684e79;
+  border: 1px solid #684e79;
+}
+
 .profile__dropdown {
   border: 1px solid #fff;
   background-color: #fff;

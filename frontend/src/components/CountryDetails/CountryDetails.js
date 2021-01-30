@@ -6,6 +6,7 @@ import { getCountries } from "../../store/country";
 import Article from "../Article";
 import RegionDetails from "../RegionDetails/RegionDetails";
 import "./CountryDetails.css";
+import Application from "./Map";
 
 const CountryDetails = () => {
   const { countryId } = useParams();
@@ -26,14 +27,18 @@ const CountryDetails = () => {
       </div>
       <div className='region__container'>
         <div className='region__map'>
-          <img
+          <Application />
+          {/* <img
             src='https://media.winefolly.com/France-Wine-Map-by-WineFolly.jpg'
             alt='Map of wine regions in France.'
-          />
+          /> */}
         </div>
         <Switch>
           <Route path={`/countries/${countryId}/:regionId`}>
             <RegionDetails />
+          </Route>
+          <Route>
+            <h2>Please select a region</h2>
           </Route>
         </Switch>
       </div>

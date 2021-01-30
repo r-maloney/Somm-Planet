@@ -29,12 +29,12 @@ const ArticleFormModal = (country) => {
 
   return (
     <>
-      <h2>Have something to share?</h2>
+      <h2>Have a story? Just love wine? Tell us here!</h2>
       <button
         className='article-form__button article__model-button'
         onClick={() => setShowModal(true)}
       >
-        Post an article here!
+        Post a story
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

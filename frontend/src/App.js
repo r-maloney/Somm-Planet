@@ -29,9 +29,9 @@ function App() {
         <Route path='/countries/:countryId'>
           <CountryDetails />
         </Route>
-        <Route path='/articles'>
-          <Article />
-        </Route>
+        {/* <Route path='/articles'>
+          <Article country='France' />
+        </Route> */}
         <Route>
           <h2>Page Not Found</h2>
         </Route>

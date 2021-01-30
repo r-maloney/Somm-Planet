@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mapbox-gl": "^2.0.1",
     "react-aria-menubutton": "^7.0.1",
     "react-select": "^4.0.2"
   }
