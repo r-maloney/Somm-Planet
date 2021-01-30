@@ -10,17 +10,20 @@ const RegionDetails = () => {
   const region = regions.find((r) => Number(r.id) === Number(regionId));
 
   return (
-    <div className='region__details'>
-      {region && (
-        <>
-          <h3>{region.name}</h3>
-          <p>{region.description}</p>
-          <div className='region__img'>
-            <img src={region.imgUrl} alt={"wine region"} />
-          </div>
-        </>
-      )}
-    </div>
+    <>
+      <div className='region__details'>
+        {region && (
+          <>
+            <h3>{region.name}</h3>
+            <p>{region.description}</p>
+            <div className='region__img'>
+              <img src={region.imgUrl} alt={"wine region"} />
+            </div>
+          </>
+        )}
+      </div>
+      <div className='region__details-wine'></div>
+    </>
   );
 };
 

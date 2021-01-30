@@ -78,7 +78,7 @@ function Navigation({ isLoaded }) {
           </li>
           <li className='navbar__link'>
             <NavLink exact to='/articles'>
-              Articles
+              Stories
             </NavLink>
           </li>
           {isLoaded && sessionLinks}
