@@ -2,8 +2,8 @@ import React from "react";
 import mapboxgl from "mapbox-gl";
 import "./Map.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoici1tYWxvbmV5IiwiYSI6ImNra2owMWlnYTA4NDMycG1qb3JqZ2Q1NzcifQ.mlD79-dbzdr4suQkMnyfgwMAPBOX_ACCESS_TOKEN";
+mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+console.log(process.env.DB_USERNAME);
 
 class Application extends React.Component {
   constructor(props) {
