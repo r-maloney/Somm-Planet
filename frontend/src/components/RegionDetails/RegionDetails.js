@@ -22,10 +22,16 @@ const RegionDetails = () => {
         )}
       </div>
       <div className='region__details-wine'>
-        <h2>Featured Wines</h2>
+        <h2 className='wine__details-header'>Featured Wines</h2>
         <ul>
           {region.Wines.map((wine) => (
-            <li key={wine.id}>{wine.name}</li>
+            <li key={wine.id} className='wine__details'>
+              <li>{wine.name}</li>
+              <li> {wine.vintage}</li>
+              <li> {wine.winery}</li>
+              <li> {wine.type}</li>
+              <li> {wine.varietal}</li>
+            </li>
           ))}
         </ul>
       </div>
