@@ -21,7 +21,10 @@ function LoginForm() {
 
   const demoLogin = () => {
     return dispatch(
-      sessionActions.login({ credential: "Demo-lition", password: "password" })
+      sessionActions.login({
+        credential: "DemoMcDemoson",
+        password: "password",
+      })
     ).catch((res) => {
       if (res.data && res.data.errors) setErrors(res.data.errors);
     });

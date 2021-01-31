@@ -42,16 +42,17 @@ function Navigation({ isLoaded }) {
   const regions = useSelector((state) => Object.values(state.region));
   const options = [];
 
-  countries.forEach((country) => {
-    options.push({
-      value: { id: country.id, state: "country" },
-      label: country.name,
-    });
-  });
   regions.forEach((region) => {
     options.push({
       value: { id: region.id, state: "region", countryId: region.countryId },
       label: region.name,
+    });
+  });
+
+  countries.forEach((country) => {
+    options.push({
+      value: { id: country.id, state: "country" },
+      label: country.name,
     });
   });
 
