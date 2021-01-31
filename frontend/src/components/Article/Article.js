@@ -8,13 +8,18 @@ const Article = ({ country }) => {
 
   const articles = useSelector((state) => Object.values(state.article));
 
-  const countryArticles = articles.filter(
-    (article) => article.Region.Country.id === country.id
-  );
+  let countryArticles = [];
+  if (country) {
+    countryArticles = articles.filter(
+      (article) => article.Region.Country.id === country.id
+    );
+  } else {
+    countryArticles = articles;
+  }
 
   useEffect(() => {
-    dispatch(getArticles(country.id));
-  }, [dispatch, country.id]);
+    dispatch(getArticles());
+  }, [dispatch]);
 
   return (
     <div className='country-articles'>
