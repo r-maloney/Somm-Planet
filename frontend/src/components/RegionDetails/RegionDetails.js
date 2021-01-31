@@ -6,7 +6,6 @@ const RegionDetails = () => {
   const { regionId } = useParams();
 
   const regions = useSelector((state) => Object.values(state.region));
-  console.log(regions);
   const region = regions.find((r) => Number(r.id) === Number(regionId));
 
   return (
@@ -24,6 +23,11 @@ const RegionDetails = () => {
       </div>
       <div className='region__details-wine'>
         <h2>Featured Wines</h2>
+        <ul>
+          {region.Wines.map((wine) => (
+            <li key={wine.id}>{wine.name}</li>
+          ))}
+        </ul>
       </div>
     </>
   );

@@ -10,13 +10,4 @@ router.get(
   })
 );
 
-router.get(
-  "/:countryId",
-  asyncHandler(async (req, res) => {
-    const id = req.params.countryId;
-    const regions = await Region.findAll({ where: { countryId: id } });
-    res.json(regions);
-  })
-);
-
 module.exports = router;
