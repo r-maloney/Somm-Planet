@@ -100,6 +100,16 @@ a {
   background-color: #a14677;
 }
 
-.article__model-button {
+.article-model__button {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+  background-color: #bf538d;
+  border: none;
+  color: #ffffff;
+  font-size: 1.125rem;
+  padding: 0.5rem 2rem;
+  outline: none;
   margin-bottom: 3rem;
+  border-bottom: 1px solid #d3d3d3;
 }

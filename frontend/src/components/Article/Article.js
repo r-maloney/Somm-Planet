@@ -2,22 +2,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getArticles } from "../../store/article";
 import "./Article.css";
-import ArticleFormModal from "../ArticleFormModal";
 
 const Article = ({ country }) => {
   const dispatch = useDispatch();
 
   const articles = useSelector((state) => Object.values(state.article));
 
+  const countryArticles = articles.filter(
+    (article) => article.Region.Country.id === country.id
+  );
+
   useEffect(() => {
-    dispatch(getArticles());
-  }, [dispatch]);
+    dispatch(getArticles(country.id));
+  }, [dispatch, country.id]);
 
   return (
     <div className='country-articles'>
-      <ArticleFormModal /> <h2>What people are saying about {country.name}</h2>
-      {articles &&
-        articles.map((article) => (
+      {countryArticles &&
+        countryArticles.map((article) => (
           <div key={article.id} className='country-article'>
             <div className='country-article__user'>
               <div className='country-article__avatar'>

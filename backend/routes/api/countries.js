@@ -5,7 +5,7 @@ const { Country, Region } = require("../../db/models");
 router.get(
   "/",
   asyncHandler(async (_req, res) => {
-    const countries = await Country.findAll();
+    const countries = await Country.findAll({ include: [{ model: Region }] });
     res.json(countries);
   })
 );

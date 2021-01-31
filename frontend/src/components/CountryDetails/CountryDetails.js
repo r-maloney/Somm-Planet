@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getCountries } from "../../store/country";
 import Article from "../Article";
 import RegionDetails from "../RegionDetails/RegionDetails";
+import ArticleFormModal from "../ArticleFormModal";
 import "./CountryDetails.css";
 
 const CountryDetails = () => {
@@ -33,6 +34,12 @@ const CountryDetails = () => {
       </div>
 
       <div>
+        <div className='article__form-header'>
+          <ArticleFormModal />
+          <h2 className='article__list-header'>
+            What people are saying about {country.name}
+          </h2>
+        </div>
         <Article country={country} />
       </div>
     </>

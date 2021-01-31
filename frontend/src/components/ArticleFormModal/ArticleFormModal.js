@@ -31,7 +31,7 @@ const ArticleFormModal = (country) => {
     <>
       <h2>Have a story to tell? Just love wine?</h2>
       <button
-        className='article-form__button article__model-button'
+        className='article-model__button'
         onClick={() => setShowModal(true)}
       >
         Tell us here!

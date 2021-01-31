@@ -10,3 +10,21 @@ img {
   font-size: 3rem;
   font-weight: normal;
 }
+
+.article__form-header {
+  width: 80%;
+  margin: auto;
+  margin-top: 3rem;
+  border-top: 1px solid #d3d3d3;
+}
+
+.article__form-header h2 {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.article__list-header {
+  border-top: 1px solid #d3d3d3;
+}

@@ -5,6 +5,8 @@ import ProfileButton from "./ProfileButton";
 import AuthFormModal from "../AuthFormModal";
 import MenuButton from "./MenuButton";
 import { getCountries } from "../../store/country";
+import { getRegions } from "../../store/region";
+import { getArticles } from "../../store/article";
 import Select from "react-select";
 import "./Navigation.css";
 
@@ -15,6 +17,14 @@ function Navigation({ isLoaded }) {
 
   useEffect(() => {
     dispatch(getCountries());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getRegions());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getArticles());
   }, [dispatch]);
 
   let sessionLinks;
