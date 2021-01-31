@@ -25,12 +25,6 @@ const CountryDetails = () => {
         <Region />
       </div>
       <div className='region__container'>
-        <div className='region__map'>
-          <img
-            src='https://media.winefolly.com/France-Wine-Map-by-WineFolly.jpg'
-            alt='Map of wine regions in France.'
-          />
-        </div>
         <Switch>
           <Route path={`/countries/${countryId}/:regionId`}>
             <RegionDetails />

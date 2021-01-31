@@ -13,8 +13,8 @@ const Region = () => {
   );
 
   useEffect(() => {
-    dispatch(getRegions(countryId));
-  }, [dispatch, countryId]);
+    dispatch(getRegions());
+  }, [dispatch]);
 
   return (
     <div>

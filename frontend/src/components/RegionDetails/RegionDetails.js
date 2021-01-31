@@ -22,7 +22,9 @@ const RegionDetails = () => {
           </>
         )}
       </div>
-      <div className='region__details-wine'></div>
+      <div className='region__details-wine'>
+        <h2>Featured Wines</h2>
+      </div>
     </>
   );
 };

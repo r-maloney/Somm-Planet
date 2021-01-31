@@ -5,8 +5,8 @@ const setRegions = (payload) => ({
   payload,
 });
 
-export const getRegions = (id) => async (dispatch) => {
-  const res = await fetch(`/api/countries/${id}`);
+export const getRegions = () => async (dispatch) => {
+  const res = await fetch(`/api/regions`);
   if (res.ok) {
     const regions = await res.json();
     dispatch(setRegions(regions));
