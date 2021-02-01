@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { deleteArticle } from "../../store/article";
 import { useDispatch } from "react-redux";
+import "./Article.css";
 
 const DeleteConfirmation = ({ id, setDeleteModal }) => {
   const dispatch = useDispatch();
@@ -16,10 +17,14 @@ const DeleteConfirmation = ({ id, setDeleteModal }) => {
   };
 
   return (
-    <div>
+    <div className='delete__modal'>
       <h3>Would you like to delete this story?</h3>
-      <button onClick={delArticle}>Yes</button>
-      <button onClick={closeModal}>No</button>
+      <button class='form__button' onClick={delArticle}>
+        Yes
+      </button>
+      <button class='form__button' onClick={closeModal}>
+        No
+      </button>
     </div>
   );
 };

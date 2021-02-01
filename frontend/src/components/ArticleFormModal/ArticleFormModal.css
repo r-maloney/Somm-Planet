@@ -31,8 +31,10 @@ a {
 }
 
 .article__errors-list {
-}
-.article__error {
+  color: #684e79;
+  text-align: center;
+  padding-bottom: 1rem;
+  list-style-type: none;
 }
 
 .article__form {

@@ -22,10 +22,6 @@ a {
   width: 400px;
 }
 
-.auth__errors-list {
-}
-.auth__error {
-}
 .auth__tab--active,
 .auth__tab--inactive {
   display: block;

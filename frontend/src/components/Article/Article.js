@@ -57,10 +57,18 @@ const Article = ({ country }) => {
                 <img src='/images/wine-glass-icon.png' alt='wine glass icon' />
                 {user && article.User && user.id === article.User.id && (
                   <>
-                    <button value={article.id} onClick={handleEdit}>
+                    <button
+                      class='form__button article__button'
+                      value={article.id}
+                      onClick={handleEdit}
+                    >
                       Edit
                     </button>
-                    <button value={article.id} onClick={handleDelete}>
+                    <button
+                      class='form__button article__button'
+                      value={article.id}
+                      onClick={handleDelete}
+                    >
                       Delete
                     </button>
                   </>
