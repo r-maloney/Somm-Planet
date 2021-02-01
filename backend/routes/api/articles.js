@@ -53,4 +53,16 @@ router.put(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = Number(req.params.id);
+    const article = await Article.findByPk(id);
+
+    await article.destroy();
+
+    return res.json({ message: "deleted" });
+  })
+);
+
 module.exports = router;
