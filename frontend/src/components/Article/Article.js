@@ -23,7 +23,7 @@ const Article = ({ country }) => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (articles && user) setIsLoaded(true);
+    if (articles) setIsLoaded(true);
   }, [articles, user]);
 
   const handleEdit = () => {

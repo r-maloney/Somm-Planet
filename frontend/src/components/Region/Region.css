@@ -47,12 +47,13 @@
   margin-top: 0rem;
   box-shadow: 0 0 10px #888888;
   width: 50rem;
+  height: auto;
 }
 
 .region__details-wine {
   overflow: auto;
   text-align: justify;
-  height: 25rem;
+  height: 28rem;
   width: 25rem;
   padding-left: 1rem;
 }
@@ -69,11 +70,6 @@
 .wine__details-list {
   overflow: auto;
   text-align: justify;
-  height: 25rem;
-}
-
-.wine__details {
-  padding: 2rem;
 }
 
 .region__details {
@@ -99,4 +95,5 @@
   border: 1px solid;
   border-radius: 0.2rem;
   width: 100%;
+  max-height: 20rem;
 }

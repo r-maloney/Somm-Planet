@@ -42,7 +42,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-      {/* <p>Sign up so you can share your stories with other somm planetiers</p> */}
     </div>
   );
 }

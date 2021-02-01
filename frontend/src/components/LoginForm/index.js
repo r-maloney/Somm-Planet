@@ -34,11 +34,6 @@ function LoginForm() {
     <>
       <form onSubmit={handleSubmit} className='auth__form'>
         <div>
-          <img
-            className='auth-form__image'
-            src='../images/somm-planet-logo-white.png'
-            alt='Somm Planet Logo'
-          />
           <ul className='auth__errors-list'>
             {errors.map((error, idx) => (
               <li className='auth__error' key={idx}>

@@ -18,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr 10fr;
   padding-left: 1rem;
+  height: auto;
 }
 
 .wine__detail {
