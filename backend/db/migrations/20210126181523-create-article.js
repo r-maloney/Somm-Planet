@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      regionId: {
+      countryId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: "Regions",
+          model: "Countries",
         },
       },
       userId: {

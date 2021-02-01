@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Article = sequelize.define(
     "Article",
     {
-      regionId: {
+      countryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Article.associate = function (models) {
     // associations can be defined here
-    Article.belongsTo(models.Region, { foreignKey: "regionId" });
+    Article.belongsTo(models.Country, { foreignKey: "countryId" });
     Article.belongsTo(models.User, { foreignKey: "userId" });
   };
   return Article;

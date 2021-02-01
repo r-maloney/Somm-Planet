@@ -5,10 +5,36 @@ module.exports = {
     return queryInterface.bulkInsert(
       "Countries",
       [
-        { name: "United States", createdAt: new Date(), updatedAt: new Date() },
-        { name: "France", createdAt: new Date(), updatedAt: new Date() },
-        { name: "Italy", createdAt: new Date(), updatedAt: new Date() },
-        { name: "Germany", createdAt: new Date(), updatedAt: new Date() },
+        {
+          name: "France",
+          description: "/images/winefolly-map-france.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Germany",
+          description: "/images/winefolly-map-germany.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Spain",
+          description: "/images/winefolly-map-spain.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Italy",
+          description: "/images/winefolly-map-italy.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Argentia",
+          description: "/images/winefolly-map-argentina.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

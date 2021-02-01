@@ -24,10 +24,6 @@ module.exports = (sequelize, DataTypes) => {
   Region.associate = function (models) {
     // associations can be defined here
     Region.belongsTo(models.Country, { foreignKey: "countryId" });
-    Region.hasMany(models.Article, {
-      foreignKey: "regionId",
-      onDelete: "cascade",
-    });
     Region.hasMany(models.Wine, {
       foreignKey: "regionId",
       onDelete: "cascade",

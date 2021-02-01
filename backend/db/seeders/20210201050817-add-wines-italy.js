@@ -17,27 +17,26 @@ module.exports = {
     };
 
     const regions = [
-      "Loire",
-      "Bourdeaux",
-      "Provence",
-      "Rhone",
-      "Beujolais",
-      "Burgundy",
-      "Alsace",
-      "Champagne",
+      "Tuscany",
+      "Piedmont",
+      "Lazio",
+      "Puglia",
+      "Veneto",
+      "Sicily",
+      "Lombardy",
     ];
 
     const seederArr = [];
 
     for (let i = 0; i < regions.length; i++) {
-      let keyword = `${regions[i]}%20france`;
+      let keyword = `${regions[i]}%20italy`;
       const url = wineUrlBuilder(keyword, 0, 10, "none");
 
       const rawWines = await fetch(url);
       const wineJson = await rawWines.json();
       wineJson.items.forEach((wine) => {
         seederArr.push({
-          regionId: i + 1,
+          regionId: i + 22,
           name: wine.Name,
           winery: wine.Winery,
           type: wine.Area || wine.Province,
