@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../Region/Region.css";
+import Wine from "../Wine";
 
 const RegionDetails = () => {
   const { regionId } = useParams();
@@ -23,18 +24,12 @@ const RegionDetails = () => {
       </div>
       <div className='region__details-wine'>
         <h2 className='wine__details-header'>Featured Wines</h2>
-        <ul className='wine__details-list'>
+        <div className='wine__details-list'>
           {region &&
             region.Wines.map((wine) => (
-              <li key={wine.id} className='wine__details'>
-                <li>{wine.name}</li>
-                <li> {wine.vintage}</li>
-                <li> {wine.winery}</li>
-                <li> {wine.type}</li>
-                <li> {wine.varietal}</li>
-              </li>
+              <Wine key={wine.id} region={region} wine={wine}></Wine>
             ))}
-        </ul>
+        </div>
       </div>
     </>
   );

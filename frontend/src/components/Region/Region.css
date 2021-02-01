@@ -42,7 +42,7 @@
 }
 .region__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   margin: auto;
   margin-top: 0rem;
   box-shadow: 0 0 10px #888888;
@@ -53,17 +53,8 @@
   overflow: auto;
   text-align: justify;
   height: 25rem;
-}
-
-.region__details-wine ul {
-  overflow: auto;
-  text-align: justify;
-  border-left: 1px solid #b4b4b4;
-  height: 25rem;
-}
-
-.wine__details:hover {
-  box-shadow: 0 0 1px #888888;
+  width: 25rem;
+  padding-left: 1rem;
 }
 
 .wine__details-header {
@@ -75,6 +66,12 @@
   font-size: 1.3rem;
 }
 
+.wine__details-list {
+  overflow: auto;
+  text-align: justify;
+  height: 25rem;
+}
+
 .wine__details {
   padding: 2rem;
 }
@@ -84,7 +81,6 @@
   margin-top: auto;
   margin-bottom: auto;
   color: #23394b;
-  margin-right: 1rem;
   padding: 1rem;
 }
 
@@ -102,4 +98,5 @@
 .region__img img {
   border: 1px solid;
   border-radius: 0.2rem;
+  width: 100%;
 }
