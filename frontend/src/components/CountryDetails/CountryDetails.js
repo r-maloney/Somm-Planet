@@ -20,9 +20,9 @@ const CountryDetails = () => {
     dispatch(getCountries());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getArticles());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getArticles());
+  // }, [dispatch]);
 
   return (
     <div className='country__details-container'>

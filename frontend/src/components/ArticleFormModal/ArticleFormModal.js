@@ -14,8 +14,7 @@ const ArticleFormModal = ({ country }) => {
   const [errors, setErrors] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const history = useHistory();
-  const params = useParams();
-  console.log(params);
+  const { countryId } = useParams();
 
   const user = useSelector((state) => state.session.user);
 
@@ -25,6 +24,7 @@ const ArticleFormModal = ({ country }) => {
 
     if (!user) {
       setErrors((errors) => [...errors, "Must be signed in to create story."]);
+      return;
     }
     if (!title) {
       setErrors((errors) => [...errors, "Please include a title."]);
@@ -38,16 +38,17 @@ const ArticleFormModal = ({ country }) => {
     }
 
     const articleObj = {
-      regionId: 1,
+      countryId,
       userId: user.id,
       body,
       imgUrl,
       title,
     };
-    const res = await dispatch(postArticle(articleObj));
-    // if (res.data && res.data.errors) setErrors(res.data.errors);
-    // else history.push(`/`);
+    dispatch(postArticle(articleObj));
     history.push(`/countries/${country.id}`);
+    setTitle("");
+    setBody("");
+    setImgUrl("");
     setShowModal(false);
   };
 

@@ -29,6 +29,24 @@ export const postArticle = (article) => async (dispatch) => {
   if (res.ok) {
     const article = res.data;
     dispatch(addArticle(article));
+    return res;
+  }
+};
+
+export const updateArticle = ({ id, title, body, imgUrl }) => async (
+  dispatch
+) => {
+  debugger;
+  const article = { title, body, imgUrl };
+
+  const res = await fetch(`/api/articles/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(article),
+  });
+  if (res.ok) {
+    const article = res.data;
+    dispatch(addArticle(article));
+    return res;
   }
 };
 
@@ -44,6 +62,7 @@ const articleReducer = (state = initState, action) => {
       return newState;
     case ADD_ARTICLE:
       const { article } = action.payload;
+      debugger;
       newState[article.id] = article;
       return newState;
     default:

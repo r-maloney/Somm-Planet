@@ -1,37 +1,48 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getArticles } from "../../store/article";
+import { Modal } from "../../context/Modal";
+import EditArticleModal from "./EditArticleModal";
 import "./Article.css";
 
 const Article = ({ country }) => {
   const dispatch = useDispatch();
+  const [editMode, setEditMode] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const user = useSelector((state) => state.session.user);
+  const articles = useSelector((state) =>
+    Object.values(state.article).filter((article) => {
+      if (!country) return true;
+      return article.countryId === country.id;
+    })
+  );
 
   useEffect(() => {
     dispatch(getArticles());
   }, [dispatch]);
 
-  const articles = useSelector((state) => Object.values(state.article));
+  useEffect(() => {
+    if (articles && user) setIsLoaded(true);
+  }, [articles, user]);
 
-  let countryArticles = [];
-  let countryRegions = [];
+  const handleEdit = () => {
+    setEditMode((p) => !p);
+  };
 
-  if (country.Regions) {
-    countryRegions = country.Regions;
-    for (let region of countryRegions) {
-      for (let article of articles) {
-        if (article.regionId === region.id) countryArticles.push(article);
-      }
-    }
-  }
+  if (!isLoaded) return null;
 
   return (
     <div className='country-articles'>
-      {countryArticles &&
-        countryArticles.map((article) => (
+      {articles &&
+        articles.map((article) => (
           <div key={article.id} className='country-article'>
             <div className='country-article__user'>
               <div className='country-article__avatar'>
                 <img src='/images/wine-glass-icon.png' alt='wine glass icon' />
+                {user && article.User && user.id === article.User.id && (
+                  <button onClick={handleEdit}>Edit</button>
+                )}
               </div>
             </div>
             <div className='country-article__article'>
@@ -41,6 +52,15 @@ const Article = ({ country }) => {
               <div className='country-article__title'>{article.title}</div>
               <p className='country-article__body'>{article.body}</p>
             </div>
+            {editMode && (
+              <Modal onClose={() => setEditMode(false)}>
+                <EditArticleModal
+                  article={article}
+                  user={user}
+                  setIsLoaded={setIsLoaded}
+                />
+              </Modal>
+            )}
           </div>
         ))}
     </div>
