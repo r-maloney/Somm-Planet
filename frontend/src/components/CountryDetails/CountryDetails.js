@@ -25,7 +25,7 @@ const CountryDetails = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className='country__details-container'>
       <h2 className='country__header'>{country.name}</h2>
       <div>
         <Region />
@@ -47,7 +47,7 @@ const CountryDetails = () => {
         </div>
         <Article country={country} />
       </div>
-    </>
+    </div>
   );
 };
 

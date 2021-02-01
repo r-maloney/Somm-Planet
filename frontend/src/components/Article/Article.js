@@ -13,9 +13,10 @@ const Article = ({ country }) => {
   const articles = useSelector((state) => Object.values(state.article));
 
   let countryArticles = [];
-  const countryRegions = country.Regions;
+  let countryRegions = [];
 
-  if (countryRegions) {
+  if (country.Regions) {
+    countryRegions = country.Regions;
     for (let region of countryRegions) {
       for (let article of articles) {
         if (article.regionId === region.id) countryArticles.push(article);
@@ -30,9 +31,8 @@ const Article = ({ country }) => {
           <div key={article.id} className='country-article'>
             <div className='country-article__user'>
               <div className='country-article__avatar'>
-                {/* {article.User.username.slice(0, 1).toUpperCase()} */}
+                <img src='/images/wine-glass-icon.png' alt='wine glass icon' />
               </div>
-              {/* <p>{article.User.username}</p> */}
             </div>
             <div className='country-article__article'>
               <p className='country-article__date'>

@@ -3,16 +3,17 @@
   justify-content: space-between;
   font-size: 16px;
   margin-top: 2rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
   color: black;
   margin-bottom: 3rem;
 }
 
 .regions__list a {
   padding: 0.6rem;
-  border: 2.5px solid #bf538d;
-  border-radius: 1rem;
+  border: 2px solid #bf538d;
+  border-radius: 2rem;
+  box-shadow: 0 0 3px #888888;
 }
 
 .regions__list a:visited {

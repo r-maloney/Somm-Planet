@@ -7,6 +7,8 @@
   width: 100%;
   height: 500px;
   background-size: cover;
+  padding-right: 7%;
+  padding-left: 7%;
 }
 
 .navbar__main {
@@ -51,8 +53,6 @@
   height: 13rem;
   top: -1.1rem;
   justify-self: center;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
 }
 

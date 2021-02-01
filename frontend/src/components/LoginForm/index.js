@@ -22,7 +22,7 @@ function LoginForm() {
   const demoLogin = () => {
     return dispatch(
       sessionActions.login({
-        credential: "DemoMcDemoson",
+        credential: "Demo-lition",
         password: "password",
       })
     ).catch((res) => {

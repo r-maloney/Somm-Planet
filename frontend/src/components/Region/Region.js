@@ -21,7 +21,14 @@ const Region = () => {
       <h3 className='regions__header'>Explore wine regions</h3>
       <div className='regions__list'>
         {regions.map((region) => (
-          <NavLink key={region.id} to={`/countries/${countryId}/${region.id}`}>
+          <NavLink
+            key={region.id}
+            to={`/countries/${countryId}/${region.id}`}
+            activeStyle={{
+              color: "white",
+              backgroundColor: "#bf538d",
+            }}
+          >
             {region.name}
           </NavLink>
         ))}

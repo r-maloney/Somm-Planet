@@ -20,10 +20,6 @@
   font-weight: 600;
   font-size: 1rem;
 }
-.country-articles ion-icon {
-  font-size: 2rem;
-  justify-self: start;
-}
 .country-articles__new-country-article {
   height: 3rem;
 }
@@ -40,6 +36,7 @@
   grid-template-columns: 8rem auto;
   border-bottom: 1px solid #d3d3d3;
   padding: 2.5rem;
+  width: 100%;
 }
 .country-article__country {
 }
@@ -59,6 +56,17 @@
   margin-bottom: 0.5rem;
 }
 
+.country-article__avatar img {
+  height: 1.3rem;
+  width: 0.8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.country-article__avatar img:hover {
+  transform: rotate(345deg);
+}
+
 .country-article__user p {
   text-align: center;
 }
@@ -76,7 +84,7 @@
   font-size: 1.5rem;
 }
 .country-article__date {
-  justify-self: end;
+  justify-self: start;
   color: #777777;
 }
 .country-article__title {

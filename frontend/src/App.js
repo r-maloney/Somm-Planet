@@ -24,9 +24,6 @@ function App() {
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route exact path='/countries/'>
-          <Country />
-        </Route>
         <Route path='/countries/:countryId'>
           <CountryDetails />
         </Route>

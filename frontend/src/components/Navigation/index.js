@@ -73,7 +73,6 @@ function Navigation({ isLoaded }) {
   return (
     <nav>
       <div className='navbar' style={style}>
-        <div className='navbar__main'></div>
         <div className='navbar__link-home navbar__main'>
           <NavLink exact to='/'>
             <img
@@ -83,6 +82,8 @@ function Navigation({ isLoaded }) {
             />
           </NavLink>
         </div>
+        <div className='navbar__main'></div>
+
         <ul className='navbar navbar__linkList navbar__main' id='navbar__list'>
           <li className='navbar__link'>
             <MenuButton />
@@ -94,7 +95,7 @@ function Navigation({ isLoaded }) {
           </li>
           {isLoaded && sessionLinks}
         </ul>
-        <h2 className='search__header'>Explore Wine Regions</h2>
+        <h2 className='search__header'>Explore the world of wine</h2>
         <Select onChange={onChange} id='search__container' options={options} />
       </div>
     </nav>

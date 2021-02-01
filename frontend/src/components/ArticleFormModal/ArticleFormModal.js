@@ -18,7 +18,22 @@ const ArticleFormModal = ({ country }) => {
   const user = useSelector((state) => state.session.user);
 
   const handleSubmit = async (e) => {
+    setErrors([]);
     e.preventDefault();
+
+    if (!user) {
+      setErrors((errors) => [...errors, "Must be signed in to create story."]);
+    }
+    if (!title) {
+      setErrors((errors) => [...errors, "Please include a title."]);
+    }
+    if (!body) {
+      setErrors((errors) => [...errors, "Please include a body."]);
+    }
+
+    if (errors.length > 0) {
+      return;
+    }
 
     const articleObj = {
       regionId: 1,
