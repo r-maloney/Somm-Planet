@@ -5,6 +5,8 @@
   list-style-type: none;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   justify-content: start;
 }
 
@@ -15,6 +17,7 @@
 .wine__details-group {
   display: grid;
   grid-template-columns: 1fr 10fr;
+  padding-left: 1rem;
 }
 
 .wine__detail {

@@ -1,6 +1,6 @@
 import "./Wine.css";
 
-const Wine = ({ region, wine }) => {
+const Wine = ({ wine }) => {
   return (
     <div className='wine__details-group'>
       <div className='wine__details-avatar'>

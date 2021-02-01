@@ -1,17 +1,48 @@
+.home__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .home__header {
   padding: 2rem;
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  color: #bf538d;
 }
 
 .home__subheader {
-  font-size: 3rem;
+  padding-top: 2rem;
+  font-size: 1.3rem;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  color: #3b444f;
+}
+
+.home__featured_wines-container {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.home__featured_wines-container > h2 {
+  margin-right: 2rem;
+  color: #3b444f;
 }
 
 .home__featured-wines {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: 4rem;
+  height: 25rem;
+  overflow: auto;
+  text-align: justify;
+  box-shadow: 0 0 10px #888888;
 }
