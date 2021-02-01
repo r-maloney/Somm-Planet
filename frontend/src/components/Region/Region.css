@@ -1,23 +1,34 @@
 .regions__list {
   display: flex;
-  justify-content: space-between;
   font-size: 16px;
   margin-top: 2rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  justify-content: center;
+  padding-left: auto;
+  padding-right: auto;
   color: black;
+  height: 3rem;
   margin-bottom: 3rem;
+  text-decoration: none;
 }
 
 .regions__list a {
   padding: 0.6rem;
+  padding-top: 0.9rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  align-items: center;
   border: 2px solid #bf538d;
-  border-radius: 2rem;
+  border-radius: 1rem;
   box-shadow: 0 0 3px #888888;
+  text-decoration: none;
+  color: white;
+  background-color: #bf538d;
+  white-space: nowrap;
 }
 
 .regions__list a:visited {
-  color: #23394b;
+  color: white;
+  text-decoration: none;
 }
 
 .regions__header {

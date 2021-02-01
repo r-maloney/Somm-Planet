@@ -25,8 +25,8 @@ const Region = () => {
             key={region.id}
             to={`/countries/${countryId}/${region.id}`}
             activeStyle={{
-              color: "white",
-              backgroundColor: "#bf538d",
+              color: "#23394b",
+              backgroundColor: "white",
             }}
           >
             {region.name}
