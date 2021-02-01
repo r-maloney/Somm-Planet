@@ -3,6 +3,7 @@ import { useParams, Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCountries } from "../../store/country";
+import { getArticles } from "../../store/article";
 import Article from "../Article";
 import RegionDetails from "../RegionDetails/RegionDetails";
 import ArticleFormModal from "../ArticleFormModal";
@@ -17,6 +18,10 @@ const CountryDetails = () => {
 
   useEffect(() => {
     dispatch(getCountries());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getArticles());
   }, [dispatch]);
 
   return (
@@ -35,7 +40,7 @@ const CountryDetails = () => {
 
       <div>
         <div className='article__form-header'>
-          <ArticleFormModal />
+          <ArticleFormModal country={country} />
           <h2 className='article__list-header'>
             What people are saying about {country.name}
           </h2>

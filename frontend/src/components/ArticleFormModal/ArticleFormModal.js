@@ -1,20 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { postArticle } from "../../store/article";
 import { Modal } from "../../context/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ArticleFormModal.css";
+import { getCountries } from "../../store/country";
 
-const ArticleFormModal = (country) => {
+const ArticleFormModal = ({ country }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [errors, setErrors] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const history = useHistory();
 
   const user = useSelector((state) => state.session.user);
-  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const articleObj = {
@@ -24,8 +27,16 @@ const ArticleFormModal = (country) => {
       imgUrl,
       title,
     };
-    dispatch(postArticle(articleObj));
+    const res = await dispatch(postArticle(articleObj));
+    // if (res.data && res.data.errors) setErrors(res.data.errors);
+    // else history.push(`/`);
+    history.push(`/countries/${country.id}`);
+    setShowModal(false);
   };
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
 
   return (
     <>
@@ -73,7 +84,7 @@ const ArticleFormModal = (country) => {
               ></input>
             </div>
             <button className='article-form__button' type='submit'>
-              Create Article
+              Create Story
             </button>
           </form>
         </Modal>

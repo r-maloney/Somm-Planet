@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getCountries } from "../../store/country";
+import { getArticles } from "../../store/article";
 
 const Country = () => {
   const dispatch = useDispatch();
@@ -9,6 +10,10 @@ const Country = () => {
 
   useEffect(() => {
     dispatch(getCountries());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getArticles());
   }, [dispatch]);
 
   return (

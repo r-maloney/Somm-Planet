@@ -45,7 +45,6 @@ const articleReducer = (state = initState, action) => {
     case ADD_ARTICLE:
       const { article } = action.payload;
       newState[article.id] = article;
-      console.log(article);
       return newState;
     default:
       return state;
