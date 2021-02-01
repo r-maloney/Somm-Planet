@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { postArticle } from "../../store/article";
 import { Modal } from "../../context/Modal";
 import { useEffect, useState } from "react";
@@ -14,6 +14,8 @@ const ArticleFormModal = ({ country }) => {
   const [errors, setErrors] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const history = useHistory();
+  const params = useParams();
+  console.log(params);
 
   const user = useSelector((state) => state.session.user);
 
@@ -37,7 +39,7 @@ const ArticleFormModal = ({ country }) => {
 
     const articleObj = {
       regionId: 1,
-      userId: user.id || 1,
+      userId: user.id,
       body,
       imgUrl,
       title,
