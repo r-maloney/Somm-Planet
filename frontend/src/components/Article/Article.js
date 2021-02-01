@@ -55,9 +55,10 @@ const Article = ({ country }) => {
             {editMode && (
               <Modal onClose={() => setEditMode(false)}>
                 <EditArticleModal
-                  article={article}
+                  id={article.id}
                   user={user}
                   setIsLoaded={setIsLoaded}
+                  setEditMode={setEditMode}
                 />
               </Modal>
             )}

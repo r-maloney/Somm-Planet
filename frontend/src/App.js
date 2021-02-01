@@ -4,9 +4,9 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
-import Country from "./components/Country";
 import CountryDetails from "./components/CountryDetails";
 import Article from "./components/Article";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ function App() {
           <h2>Page Not Found</h2>
         </Route>
       </Switch>
+      <Footer isLoaded={isLoaded} />
     </>
   );
 }

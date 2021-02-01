@@ -1,24 +1,24 @@
-import { useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { updateArticle } from "../../store/article";
 import { useEffect, useState } from "react";
 import "../ArticleFormModal/ArticleFormModal.css";
 import { getCountries } from "../../store/country";
 
-const EditArticleModal = ({ article, user, setIsLoaded }) => {
+const EditArticleModal = ({ id, user, setIsLoaded, setEditMode }) => {
   const dispatch = useDispatch();
+  const article = useSelector((state) => state.article[id]);
   const [title, setTitle] = useState(article.title || "");
   const [body, setBody] = useState(article.body || "");
   const [imgUrl, setImgUrl] = useState(article.imgUrl || "");
   const [errors, setErrors] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const history = useHistory();
   const { countryId } = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
     setIsLoaded(false);
+    setEditMode(false);
 
     if (!user) {
       setErrors((errors) => [...errors, "Must be signed in to create story."]);
@@ -41,8 +41,10 @@ const EditArticleModal = ({ article, user, setIsLoaded }) => {
       imgUrl,
       title,
     };
+    setTitle("");
+    setBody("");
+    setImgUrl("");
     dispatch(updateArticle(articleObj));
-    setShowModal(false);
   };
 
   useEffect(() => {

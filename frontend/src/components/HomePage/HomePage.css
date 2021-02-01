@@ -1,0 +1,17 @@
+.home__header {
+  padding: 2rem;
+  font-size: 4rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__subheader {
+  font-size: 3rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__featured-wines {
+}

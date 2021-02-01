@@ -36,7 +36,6 @@ export const postArticle = (article) => async (dispatch) => {
 export const updateArticle = ({ id, title, body, imgUrl }) => async (
   dispatch
 ) => {
-  debugger;
   const article = { title, body, imgUrl };
 
   const res = await fetch(`/api/articles/${id}`, {
@@ -62,7 +61,6 @@ const articleReducer = (state = initState, action) => {
       return newState;
     case ADD_ARTICLE:
       const { article } = action.payload;
-      debugger;
       newState[article.id] = article;
       return newState;
     default:
