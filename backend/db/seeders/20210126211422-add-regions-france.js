@@ -41,9 +41,9 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "Beujolais",
+          name: "Beaujolais",
           description: "Most famous for gamay",
-          imgUrl: "/images/regions/beujolais.jpg",
+          imgUrl: "/images/regions/beaujolais.jpg",
           countryId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),

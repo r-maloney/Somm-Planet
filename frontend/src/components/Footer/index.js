@@ -13,7 +13,7 @@ const Footer = ({ isLoaded }) => {
                   <a href='https://github.com/r-maloney'>Author's Github</a>
                 </li>
                 <li className='footer__link'>
-                  <a href='https://www.linkedin.com/in/rdmaloney92/'>
+                  <a href='https://www.linkedin.com/in/r-maloney/'>
                     Author's LinkedIn
                   </a>
                 </li>

@@ -8,7 +8,7 @@ router.get(
   asyncHandler(async (_req, res) => {
     const articles = await Article.findAll({
       include: [{ model: User }, { model: Country }],
-      order: [["createdAt", "DESC"]],
+      order: [["createdAt", "ASC"]],
     });
     res.json(articles);
   })
