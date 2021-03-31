@@ -79,6 +79,7 @@ const articleReducer = (state = initState, action) => {
     case ADD_ARTICLE:
       const { article } = action.payload;
       newState[article.id] = article;
+      //add country and user keys to article assigning to the action.payload
       return newState;
     case REMOVE_ARTICLE:
       delete newState[action.id];

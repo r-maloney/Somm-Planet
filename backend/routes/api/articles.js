@@ -26,6 +26,7 @@ router.post(
       body,
       imgUrl,
     });
+    //query for user and country. Add to res json
     res.json({ article });
   })
 );
